@@ -24,12 +24,6 @@
         z-index: -1;
       }
 
-      @media screen and (min-width: 1000px) {
-        img {
-          object-fit: cover;
-        }
-      }
-
       /* Frohe Weihnachten Nachricht */
       span {
         display: flex;
@@ -38,7 +32,7 @@
         top: 15vh;
         left: 5%;
         color: #d72638; /* Festliches Rot */
-        font-size: 2rem;
+        font-size: 3vw; /* Dynamische Schriftgröße */
         font-weight: bold;
         line-height: 1.5;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Leichter Schatten */
@@ -52,6 +46,21 @@
         padding: 1rem 2rem;
         border-radius: 10px;
         border: 2px solid #950101; /* Dunkler roter Rand */
+      }
+
+      /* Media-Queries für unterschiedliche Bildschirmgrößen */
+      @media screen and (max-width: 768px) {
+        span {
+          font-size: 2.6vw; /* Größerer Text auf kleineren Bildschirmen */
+          padding: 1rem; /* Kleinere Abstände */
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        span {
+          font-size: 2vw; /* Noch größerer Text für sehr kleine Bildschirme */
+          padding: 0.5rem; /* Minimaler Abstand */
+        }
       }
 
       /* Schneeflocken-Stil */
