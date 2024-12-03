@@ -24,42 +24,49 @@ span {
     position: fixed;
     top: 15vh;
     left: 5%;
-    color: #d72638;
-    /* Festliches Rot */
-    font-size: 3vw;
-    /* Dynamische Schriftgröße */
+    color: #d72638; /* Festliches Rot */
+    font-size: 4vw; /* Dynamische Schriftgröße für Desktop */
     font-weight: bold;
     line-height: 1.5;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    /* Leichter Schatten */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Leichter Schatten */
     z-index: 2;
-    background: rgba(255,
-            255,
-            255,
-            0.3);
-    /* Halbtransparenter Hintergrund */
+    background: rgba(255, 255, 255, 0.3); /* Halbtransparenter Hintergrund */
     padding: 1rem 2rem;
     border-radius: 10px;
-    border: 2px solid #950101;
-    /* Dunkler roter Rand */
+    border: 2px solid #950101; /* Dunkler roter Rand */
 }
 
-/* Media-Queries für unterschiedliche Bildschirmgrößen */
-@media screen and (max-width: 768px) {
+/* Media Queries für unterschiedliche Bildschirmgrößen */
+
+/* Sehr große Bildschirme (ab 1200px) */
+@media screen and (min-width: 1200px) {
     span {
-        font-size: 4vw;
-        /* Kleiner Text auf kleineren Bildschirmen */
-        padding: 1rem;
-        /* Kleinere Abstände */
+        font-size: 2.5vw; /* Kleinere Schrift auf großen Bildschirmen */
+        padding: 2rem;
     }
 }
 
-@media screen and (min-width: 480px) {
+/* Große Bildschirme (768px bis 1199px) */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
     span {
-        font-size: 2vw;
-        /* Noch kleinerer Text für sehr kleine Bildschirme */
-        padding: 0.5rem;
-        /* Minimaler Abstand */
+        font-size: 3vw; /* Mittelgroße Schrift */
+        padding: 1.5rem;
+    }
+}
+
+/* Tablets und kleinere Bildschirme (480px bis 767px) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    span {
+        font-size: 4vw; /* Größere Schrift für kleinere Bildschirme */
+        padding: 1rem;
+    }
+}
+
+/* Sehr kleine Bildschirme (bis 479px) */
+@media screen and (max-width: 479px) {
+    span {
+        font-size: 6vw; /* Sehr große Schrift für kleine Geräte */
+        padding: 0.5rem 1rem;
     }
 }
 
@@ -79,7 +86,6 @@ span {
     0% {
         transform: translateY(-10px);
     }
-
     100% {
         transform: translateY(110vh);
     }
