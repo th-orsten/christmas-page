@@ -56,7 +56,7 @@ span {
 
 @media screen and (max-width: 480px) {
     span {
-        font-size: 2vw;
+        font-size: 3vw;
         /* Noch kleinerer Text für sehr kleine Bildschirme */
         padding: 0.5rem;
         /* Minimaler Abstand */
