@@ -47,7 +47,7 @@ span {
 /* Media-Queries für unterschiedliche Bildschirmgrößen */
 @media screen and (max-width: 768px) {
     span {
-        font-size: 2.6vw;
+        font-size: 4vw;
         /* Kleiner Text auf kleineren Bildschirmen */
         padding: 1rem;
         /* Kleinere Abstände */
@@ -56,7 +56,7 @@ span {
 
 @media screen and (max-width: 480px) {
     span {
-        font-size: 3vw;
+        font-size: 2vw;
         /* Noch kleinerer Text für sehr kleine Bildschirme */
         padding: 0.5rem;
         /* Minimaler Abstand */
