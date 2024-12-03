@@ -4,94 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frohe Weihnachten</title>
-    <style>
-      /* Basis-Styles für den Body */
-      body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        position: relative;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      /* Hintergrundbild */
-      img {
-        height: 100vh;
-        width: 100vw;
-        object-fit: cover;
-        object-position: center;
-        position: absolute;
-        z-index: -1;
-      }
-
-      /* Frohe Weihnachten Nachricht */
-      span {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 15vh;
-        left: 5%;
-        color: #d72638; /* Festliches Rot */
-        font-size: 3vw; /* Dynamische Schriftgröße */
-        font-weight: bold;
-        line-height: 1.5;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Leichter Schatten */
-        z-index: 2;
-        background: rgba(
-          255,
-          255,
-          255,
-          0.3
-        ); /* Halbtransparenter Hintergrund */
-        padding: 1rem 2rem;
-        border-radius: 10px;
-        border: 2px solid #950101; /* Dunkler roter Rand */
-      }
-
-      /* Media-Queries für unterschiedliche Bildschirmgrößen */
-      @media screen and (max-width: 768px) {
-        span {
-          font-size: 2.6vw; /* Größerer Text auf kleineren Bildschirmen */
-          padding: 1rem; /* Kleinere Abstände */
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        span {
-          font-size: 2vw; /* Noch größerer Text für sehr kleine Bildschirme */
-          padding: 0.5rem; /* Minimaler Abstand */
-        }
-      }
-
-      /* Schneeflocken-Stil */
-      .snowflake {
-        position: fixed;
-        top: -10px;
-        color: white;
-        font-size: 1em;
-        opacity: 0.8;
-        pointer-events: none;
-        animation: fall linear infinite;
-      }
-
-      /* Schneeflocken-Fall-Animation */
-      @keyframes fall {
-        0% {
-          transform: translateY(-10px);
-        }
-        100% {
-          transform: translateY(110vh);
-        }
-      }
-    </style>
   </head>
   <body>
+    <link rel="stylesheet" href="style-app.css" />
+    <script src="app.js"></script>
     <!-- Hintergrundbild -->
     <img
       src="https://cdn.pixabay.com/photo/2022/12/07/12/52/christmas-tree-7641111_960_720.jpg"
       alt="Weihnachtsbaum"
     />
-
     <!-- Text -->
     <span>
       🎄 Frohe Weihnachten 🎄 <br />
@@ -99,22 +20,5 @@
       gesundes und zufriedenes <br />
       neues Jahr 2025!!! ✨
     </span>
-
-    <!-- Schneeflocken -->
-    <script>
-      const snowflakeCount = 100; // Anzahl der Schneeflocken
-      const body = document.body;
-
-      for (let i = 0; i < snowflakeCount; i++) {
-        const snowflake = document.createElement("div");
-        snowflake.classList.add("snowflake");
-        snowflake.textContent = "❄";
-        snowflake.style.left = Math.random() * 100 + "vw"; // Zufällige Position
-        snowflake.style.fontSize = Math.random() * 2 + 1 + "em"; // Zufällige Größe
-        snowflake.style.animationDuration = Math.random() * 5 + 5 + "s"; // Zufällige Geschwindigkeit
-        snowflake.style.animationDelay = Math.random() * 5 + "s"; // Zufällige Verzögerung
-        body.appendChild(snowflake);
-      }
-    </script>
   </body>
 </html>
