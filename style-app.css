@@ -54,7 +54,7 @@ span {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
     span {
         font-size: 2vw;
         /* Noch kleinerer Text für sehr kleine Bildschirme */
