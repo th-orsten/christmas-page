@@ -1,80 +1,92 @@
+/* root color */
+:root {
+    --background-color: #A60303;
+    --background-color-2: #F21905;
+    --prime-color: #788C2E;
+    --prime-color-2: #2C5916;
+    --font-color: #0D2601;
+    --snowflakes: antiquewhite;
+}
+
 /* Basis-Styles für den Body */
 body {
+    height: 100vh;
+    width: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    position: relative;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--font-color);
 }
 
-/* Hintergrundbild */
-img {
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    z-index: -1;
-}
-
-/* Frohe Weihnachten Nachricht */
-span {
+/* Container-Layout */
+.container {
     display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 15vh;
-    left: 5%;
-    color: #d72638; /* Festliches Rot */
-    font-size: 4vw; /* Dynamische Schriftgröße für Desktop */
-    font-weight: bold;
-    line-height: 1.5;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Leichter Schatten */
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.3); /* Halbtransparenter Hintergrund */
-    padding: 1rem 2rem;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 3rem;
+    box-sizing: border-box;
+    height: calc(90vh); /* erzeugt sichtbaren Rand oben & unten */
+}
+
+/* Box */
+.box {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Schatten unten + rechts mit Root-Farbe */
+    box-shadow: 6px 6px 15px var(--prime-color);
+}
+
+/* image box */
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* kein Verzerren, perfekter Zuschnitt */
     border-radius: 10px;
-    border: 2px solid #950101; /* Dunkler roter Rand */
 }
 
-/* Media Queries für unterschiedliche Bildschirmgrößen */
+/* Textbox */
+.notification {
+    background: var(--background-color-2);
+    border-radius: 10px;
+    padding: 2rem;
+    color: var(--font-color);
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 1.4;
 
-/* Sehr große Bildschirme (ab 1200px) */
-@media screen and (min-width: 1200px) {
-    span {
-        font-size: 2.5vw; /* Kleinere Schrift auf großen Bildschirmen */
-        padding: 2rem;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;  /* WICHTIG: Gleich groß wie image */
 }
 
-/* Große Bildschirme (768px bis 1199px) */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-    span {
-        font-size: 3vw; /* Mittelgroße Schrift */
-        padding: 1.5rem;
-    }
-}
 
-/* Tablets und kleinere Bildschirme (480px bis 767px) */
-@media screen and (min-width: 480px) and (max-width: 767px) {
-    span {
-        font-size: 4vw; /* Größere Schrift für kleinere Bildschirme */
-        padding: 1rem;
-    }
-}
 
-/* Sehr kleine Bildschirme (bis 479px) */
-@media screen and (max-width: 479px) {
-    span {
-        font-size: 6vw; /* Sehr große Schrift für kleine Geräte */
-        padding: 0.5rem 1rem;
-    }
+/* Responsive – ab Tablet untereinander */
+@media (max-width: 768px) {
+  body {
+      overflow: auto;
+  }
+
+  .container {
+      flex-direction: column;
+      height: auto;
+      gap: 2rem;
+  }
 }
 
 /* Schneeflocken-Stil */
 .snowflake {
     position: fixed;
     top: -10px;
-    color: white;
+    color: var(--snowflakes);
     font-size: 1em;
     opacity: 0.8;
     pointer-events: none;

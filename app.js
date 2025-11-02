@@ -1,5 +1,5 @@
 //snowflakes//
-const snowflakeCount = 100; // Anzahl der Schneeflocken
+const snowflakeCount = 50; // Anzahl der Schneeflocken
 const body = document.body;
 
 for (let i = 0; i < snowflakeCount; i++) {
